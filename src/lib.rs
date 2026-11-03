@@ -1,1 +1,1 @@
-// Logic Grid game engine — solver integration belongs in bots/.
+// Logic Grid game engine — solver integration belongs in src/bots/.
