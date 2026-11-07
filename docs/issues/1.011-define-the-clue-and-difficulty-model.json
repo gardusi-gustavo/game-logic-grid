@@ -1,42 +1,29 @@
 {
-  "id": "1.011",
   "rank": "1.011",
-  "type": "enhancement",
-  "title": "1.011 - Define the clue and difficulty model",
-  "status": "backlog",
-  "source": "agent",
-  "author": "gardusi-gustavo-bot",
-  "created": "2026-10-29",
-  "platform": "gitea",
-  "platform_issue_id": null,
-  "platform_issue_url": null,
+  "title": "Define the clue and difficulty model",
+  "context": "Define how clues are generated and what makes a Logic Grid puzzle easy or hard.",
   "limits": {
     "max_commits": 5,
     "max_file_changes": 4
   },
-  "attempts": [],
-  "tags": [
-    "enhancement",
-    "migrated"
-  ],
-  "legacy": {
-    "issue_id": 5,
-    "url": "http://gitea.localhost:3001/games/logic-grid/issues/5",
-    "author": "gardusi-gustavo-bot",
-    "created_at": "2026-10-29",
-    "labels": [
-      "enhancement"
-    ],
-    "comments_count": 0,
-    "original_rank": "1.0",
-    "original_title": "1.0 - Define the clue and difficulty model",
-    "body": "## Summary\n\nDefine how clues are generated and what makes a Logic Grid puzzle easy or hard.\n\n## Context\n\nWithout a difficulty model, generated puzzles are either trivial or\nunsolvable, and the solver cannot report a meaningful score.\n\n## Expected outcome\n\n- Clue types and how each constrains the solution.\n- A measured difficulty signal: solver steps, branching, or deduction depth.\n- Difficulty buckets with thresholds.\n- A minimum-clue rule for uniqueness.\n- A way to compare two puzzles.\n\n## Out of scope\n\n- Player skill modeling.\n- Adaptive difficulty.\n- UI hints.\n\n## Acceptance criteria\n\n- [ ] Every clue type is documented.\n- [ ] Difficulty is computed from a deterministic measure.\n- [ ] Buckets have numeric thresholds.\n- [ ] The solver reports the measure.\n- [ ] Generated puzzles land in the requested bucket or are regenerated.\n- [ ] Fixtures cover each bucket.\n\n## Plan\n\n- [ ] Define the measure.\n- [ ] Calibrate thresholds on fixtures.\n- [ ] Expose the measure from the solver.\n- [ ] Document the buckets.\n\n## Validation\n\n- [ ] The same puzzle gets the same difficulty.\n- [ ] A trivial puzzle and a hard puzzle land in different buckets.\n- [ ] Generation respects the requested bucket.\n\n## References\n\n- Generator: #4\n- Solver oracle: #4\n- Tests: ops/templates#34"
-  },
   "spec": {
-    "summary": "## Summary",
-    "expected_outcome": "Migrated from Gitea issue #5; confirm scope before starting.",
+    "summary": "Define the clue and difficulty model",
+    "expected_outcome": "Confirm the migrated scope and acceptance criteria.",
     "acceptance_criteria": [
-      "Review the legacy body and confirm the acceptance criteria."
+      "Every clue type is documented.",
+      "Difficulty is computed from a deterministic measure.",
+      "Buckets have numeric thresholds.",
+      "The solver reports the measure.",
+      "Generated puzzles land in the requested bucket or are regenerated.",
+      "Fixtures cover each bucket.",
+      "Define the measure.",
+      "Calibrate thresholds on fixtures.",
+      "Expose the measure from the solver.",
+      "Document the buckets.",
+      "The same puzzle gets the same difficulty.",
+      "A trivial puzzle and a hard puzzle land in different buckets.",
+      "Generation respects the requested bucket."
     ]
-  }
+  },
+  "attempts": []
 }

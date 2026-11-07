@@ -1,42 +1,29 @@
 {
-  "id": "1.2",
   "rank": "1.2",
-  "type": "enhancement",
-  "title": "1.2 - Adopt the game-kit contract for state, actions, and rules",
-  "status": "backlog",
-  "source": "agent",
-  "author": "gardusi-gustavo-bot",
-  "created": "2026-10-29",
-  "platform": "gitea",
-  "platform_issue_id": null,
-  "platform_issue_url": null,
+  "title": "Adopt the game-kit contract for state, actions, and rules",
+  "context": "Implement the shared `game-kit` contract so Logic Grid exposes one deterministic",
   "limits": {
     "max_commits": 5,
     "max_file_changes": 4
   },
-  "attempts": [],
-  "tags": [
-    "enhancement",
-    "migrated"
-  ],
-  "legacy": {
-    "issue_id": 3,
-    "url": "http://gitea.localhost:3001/games/logic-grid/issues/3",
-    "author": "gardusi-gustavo-bot",
-    "created_at": "2026-10-29",
-    "labels": [
-      "enhancement"
-    ],
-    "comments_count": 0,
-    "original_rank": "1.2",
-    "original_title": "1.2 - Adopt the game-kit contract for state, actions, and rules",
-    "body": "## Summary\n\nImplement the shared `game-kit` contract so Logic Grid exposes one deterministic\ngame core for the client, solver, and training.\n\n## Context\n\n`src/lib.rs` is a one-line comment and `Cargo.toml` does not depend on\n`tools/game-kit`. The shared crate already defines `Action`, `GameState`, and\n`Game`.\n\n## Expected outcome\n\n- `logic-grid` implements `game_kit::Game`.\n- State and action types are explicit and serializable.\n- `apply` is deterministic and rejects illegal actions.\n- `legal_actions` is complete for every reachable state.\n- The core has no browser or rendering code.\n\n## Out of scope\n\n- Puzzle generation.\n- Browser UI.\n- Solver optimization.\n\n## Acceptance criteria\n\n- [ ] `Cargo.toml` depends on a pinned `game-kit` version.\n- [ ] `State`, `Action`, and `Game` are implemented.\n- [ ] Illegal actions return `None` and never panic.\n- [ ] Replaying the same seed and actions produces identical state.\n- [ ] A conformance test covers initial state, legal actions, and apply.\n- [ ] No browser dependency is added to the core crate.\n\n## Plan\n\n- [ ] Map the Logic Grid rules to the traits.\n- [ ] Add serialization.\n- [ ] Add the conformance test.\n- [ ] Document invariants in `docs/`.\n\n## Validation\n\n- [ ] Same seed + actions = same state hash.\n- [ ] Invalid action is rejected.\n- [ ] `cargo test` passes.\n\n## References\n\n- Shared contract: tools/game-kit\n- Boundaries: ops/templates#31\n- Shared contracts: ops/templates#32\n- Tests: ops/templates#34"
-  },
   "spec": {
-    "summary": "## Summary",
-    "expected_outcome": "Migrated from Gitea issue #3; confirm scope before starting.",
+    "summary": "Adopt the game-kit contract for state, actions, and rules",
+    "expected_outcome": "Confirm the migrated scope and acceptance criteria.",
     "acceptance_criteria": [
-      "Review the legacy body and confirm the acceptance criteria."
+      "`Cargo.toml` depends on a pinned `game-kit` version.",
+      "`State`, `Action`, and `Game` are implemented.",
+      "Illegal actions return `None` and never panic.",
+      "Replaying the same seed and actions produces identical state.",
+      "A conformance test covers initial state, legal actions, and apply.",
+      "No browser dependency is added to the core crate.",
+      "Map the Logic Grid rules to the traits.",
+      "Add serialization.",
+      "Add the conformance test.",
+      "Document invariants in `docs/`.",
+      "Same seed + actions = same state hash.",
+      "Invalid action is rejected.",
+      "`cargo test` passes."
     ]
-  }
+  },
+  "attempts": []
 }
