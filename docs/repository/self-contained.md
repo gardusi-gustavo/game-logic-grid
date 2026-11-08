@@ -7,7 +7,7 @@ recoverable, and copyable without Gitea.
 
 - Repository: `games/logic-grid`
 - Visibility: public
-- Owner: `gardusi-gustavo`
+- Owner: `human`
 - Git platform: Gitea
 - Local checkout: `~/repos/games/logic-grid`
 
